@@ -5,6 +5,46 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Confirmed Speakers — ICM 2026 Satellite: Synergies in Combinatorics and TCS</title>
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Page-specific responsive table improvements */
+    @media (max-width: 640px) {
+      .table thead {
+        position: absolute;
+        left: -9999px;
+        top: -9999px;
+      }
+
+      .table,
+      .table tbody,
+      .table tr,
+      .table td {
+        display: block;
+        width: 100%;
+      }
+
+      .table tr {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(17,24,39,0.12);
+      }
+
+      .table td {
+        padding: 6px 0;
+        border-bottom: none;
+      }
+
+      .table td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        color: #4b5563;
+        margin-bottom: 2px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -39,118 +79,135 @@
         <table class="table" aria-label="Confirmed speakers table">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Institution</th>
-              <th>Website</th>
+              <th scope="col">Name</th>
+              <th scope="col">Institution</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Nikhil Bansal</td>
-              <td>University of Michigan </td>
-              <td><a href="https://bansal.engin.umich.edu/" target="_blank" rel="noopener">https://bansal.engin.umich.edu/</a></td>
+              <td data-label="Name">
+                <a href="https://bansal.engin.umich.edu/" target="_blank" rel="noopener">Nikhil Bansal</a>
+              </td>
+              <td data-label="Institution">University of Michigan</td>
             </tr>
 
             <tr>
-              <td>Amey Bhangale</td>
-              <td>UC Riverside </td>
-              <td><a href="https://sites.google.com/view/amey-bhangale/home" target="_blank" rel="noopener">https://sites.google.com/view/amey-bhangale/home</a></td>
-            </tr>
-            
-            <tr>
-              <td>Rachel Greenfeld</td>
-              <td>Northwestern University </td>
-              <td><a href="https://rgreenfeld.math.northwestern.edu/" target="-blank" rel="noopener">https://rgreenfeld.math.northwestern.edu/</a></td>
+              <td data-label="Name">
+                <a href="https://sites.google.com/view/amey-bhangale/home" target="_blank" rel="noopener">Amey Bhangale</a>
+              </td>
+              <td data-label="Institution">UC Riverside</td>
             </tr>
 
             <tr>
-              <td>Venkatesan Guruswami</td>
-              <td>UC Berkeley</td>
-              <td><a href="https://people.eecs.berkeley.edu/~venkatg/" target="_blank" rel="noopener">https://people.eecs.berkeley.edu/~venkatg/</a></td>
+              <td data-label="Name">
+                <a href="https://rgreenfeld.math.northwestern.edu/" target="_blank" rel="noopener">Rachel Greenfeld</a>
+              </td>
+              <td data-label="Institution">Northwestern University</td>
             </tr>
 
             <tr>
-              <td>Max Hopkins</td>
-              <td>Institute for Advanced Study </td>
-              <td><a href="https://cseweb.ucsd.edu/~nmhopkin/" target="_blank" rel="noopener">https://cseweb.ucsd.edu/~nmhopkin/</a></td>
+              <td data-label="Name">
+                <a href="https://people.eecs.berkeley.edu/~venkatg/" target="_blank" rel="noopener">Venkatesan Guruswami</a>
+              </td>
+              <td data-label="Institution">UC Berkeley</td>
             </tr>
 
             <tr>
-              <td>Tim Hsieh</td>
-              <td>MIT</td>
-              <td><a href="https://jthsieh.github.io/" target="_blank" rel="noopener">https://jthsieh.github.io/</a></td>
+              <td data-label="Name">
+                <a href="https://cseweb.ucsd.edu/~nmhopkin/" target="_blank" rel="noopener">Max Hopkins</a>
+              </td>
+              <td data-label="Institution">Institute for Advanced Study</td>
             </tr>
 
             <tr>
-              <td>Oliver Janzer</td>
-              <td>EPFL</td>
-              <td><a href="https://people.epfl.ch/oliver.janzer" target="_blank" rel="noopener">https://people.epfl.ch/oliver.janzer</a></td>
+              <td data-label="Name">
+                <a href="https://jthsieh.github.io/" target="_blank" rel="noopener">Tim Hsieh</a>
+              </td>
+              <td data-label="Institution">MIT</td>
             </tr>
 
             <tr>
-              <td>Zander Kelley</td>
-              <td>Institute for Advanced Study</td>
-              <td><a href="https://zanderkelley.com/" target="_blank" rel="noopener">https://zanderkelley.com/</a></td>
+              <td data-label="Name">
+                <a href="https://people.epfl.ch/oliver.janzer" target="_blank" rel="noopener">Oliver Janzer</a>
+              </td>
+              <td data-label="Institution">EPFL</td>
             </tr>
 
             <tr>
-              <td>Pravesh Kothari</td>
-              <td>Princeton University </td>
-              <td><a href="https://www.cs.princeton.edu/~kothari/" target="_blank" rel="noopener">https://www.cs.princeton.edu/~kothari/</a></td>
+              <td data-label="Name">
+                <a href="https://zanderkelley.com/" target="_blank" rel="noopener">Zander Kelley</a>
+              </td>
+              <td data-label="Institution">Institute for Advanced Study</td>
             </tr>
 
             <tr>
-              <td>Noam Lifshitz</td>
-              <td>Hebrew University of Jerusalem</td>
-              <td><a href="https://mathematics.huji.ac.il/people/noam-lifshitz" target="_blank" rel="noopener">https://mathematics.huji.ac.il/people/noam-lifshitz</a></td>
+              <td data-label="Name">
+                <a href="https://www.cs.princeton.edu/~kothari/" target="_blank" rel="noopener">Pravesh Kothari</a>
+              </td>
+              <td data-label="Institution">Princeton University</td>
             </tr>
 
             <tr>
-              <td>Yang Liu</td>
-              <td>CMU</td>
-              <td><a href="https://yangpliu.github.io/" target="_blank" rel="noopener">https://yangpliu.github.io/</a></td>
+              <td data-label="Name">
+                <a href="https://mathematics.huji.ac.il/people/noam-lifshitz" target="_blank" rel="noopener">Noam Lifshitz</a>
+              </td>
+              <td data-label="Institution">Hebrew University of Jerusalem</td>
             </tr>
 
             <tr>
-              <td>Richard Montgomery</td>
-              <td>University of Warwick</td>
-              <td><a href="https://rhmontgomery.warwick.ac.uk/" target="_blank" rel="noopener">https://rhmontgomery.warwick.ac.uk/</a></td>
+              <td data-label="Name">
+                <a href="https://yangpliu.github.io/" target="_blank" rel="noopener">Yang Liu</a>
+              </td>
+              <td data-label="Institution">CMU</td>
             </tr>
 
             <tr>
-              <td>Luke Postle</td>
-              <td>University of Waterloo</td>
-              <td><a href="https://www.math.uwaterloo.ca/~lpostle/" target="_blank" rel="noopener">https://www.math.uwaterloo.ca/~lpostle/</a></td>
+              <td data-label="Name">
+                <a href="https://rhmontgomery.warwick.ac.uk/" target="_blank" rel="noopener">Richard Montgomery</a>
+              </td>
+              <td data-label="Institution">University of Warwick</td>
             </tr>
 
             <tr>
-              <td>Julian Sahasrabudhe</td>
-              <td>University of Cambridge</td>
-              <td><a href="https://www.dpmms.cam.ac.uk/~jdrs2/" target="_blank" rel="noopener">https://www.dpmms.cam.ac.uk/~jdrs2/</a></td>
+              <td data-label="Name">
+                <a href="https://www.math.uwaterloo.ca/~lpostle/" target="_blank" rel="noopener">Luke Postle</a>
+              </td>
+              <td data-label="Institution">University of Waterloo</td>
             </tr>
 
             <tr>
-              <td>Istvan Tomon</td>
-              <td>Umeå University </td>
-              <td><a href="https://sites.google.com/view/istvantomon/home" target="_blank" rel="noopener">https://sites.google.com/view/istvantomon/home</a></td>
+              <td data-label="Name">
+                <a href="https://www.dpmms.cam.ac.uk/~jdrs2/" target="_blank" rel="noopener">Julian Sahasrabudhe</a>
+              </td>
+              <td data-label="Institution">University of Cambridge</td>
             </tr>
 
             <tr>
-              <td>Kewen Wu</td>
-              <td>Caltech </td>
-              <td><a href="https://shlw.github.io/" target="_blank" rel="noopener">https://shlw.github.io/</a></td>
-            </tr>
-            
-            <tr>
-              <td>Dimitrii Zakharov</td>
-              <td>MIT </td>
-              <td><a href="https://sites.google.com/view/dmitriizakharov/home" target="_blank" rel="noopener">https://sites.google.com/view/dmitriizakharov/home</a></td>
+              <td data-label="Name">
+                <a href="https://sites.google.com/view/istvantomon/home" target="_blank" rel="noopener">Istvan Tomon</a>
+              </td>
+              <td data-label="Institution">Umeå University</td>
             </tr>
 
             <tr>
-              <td>Ruixiang Zhang</td>
-              <td>UC Berkeley</td>
-              <td><a href="https://sites.google.com/view/ruixiang-zhang/home" target="_blank" rel="noopener">https://sites.google.com/view/ruixiang-zhang/home</a></td>
+              <td data-label="Name">
+                <a href="https://shlw.github.io/" target="_blank" rel="noopener">Kewen Wu</a>
+              </td>
+              <td data-label="Institution">Caltech</td>
+            </tr>
+
+            <tr>
+              <td data-label="Name">
+                <a href="https://sites.google.com/view/dmitriizakharov/home" target="_blank" rel="noopener">Dimitrii Zakharov</a>
+              </td>
+              <td data-label="Institution">MIT</td>
+            </tr>
+
+            <tr>
+              <td data-label="Name">
+                <a href="https://sites.google.com/view/ruixiang-zhang/home" target="_blank" rel="noopener">Ruixiang Zhang</a>
+              </td>
+              <td data-label="Institution">UC Berkeley</td>
             </tr>
           </tbody>
         </table>
