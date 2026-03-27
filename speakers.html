@@ -7,41 +7,63 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* Page-specific responsive table improvements */
-    @media (max-width: 640px) {
-      .table thead {
-        position: absolute;
-        left: -9999px;
-        top: -9999px;
+    .speaker-grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .speaker-card{
+      background: rgba(255,255,255,0.98);
+      border: 1px solid rgba(17,24,39,0.08);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .speaker-card:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    }
+
+    .speaker-name{
+      margin: 0 0 8px 0;
+      font-size: 19px;
+      line-height: 1.25;
+    }
+
+    .speaker-name a{
+      color: var(--caltech-orange);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .speaker-name a:hover,
+    .speaker-name a:focus-visible{
+      color: var(--caltech-orange-hover);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .speaker-inst{
+      margin: 0;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    @media (max-width: 480px){
+      .speaker-grid{
+        grid-template-columns: 1fr;
       }
 
-      .table,
-      .table tbody,
-      .table tr,
-      .table td {
-        display: block;
-        width: 100%;
+      .speaker-card{
+        padding: 14px;
       }
 
-      .table tr {
-        padding: 10px 0;
-        border-bottom: 1px solid rgba(17,24,39,0.12);
-      }
-
-      .table td {
-        padding: 6px 0;
-        border-bottom: none;
-      }
-
-      .table td::before {
-        content: attr(data-label);
-        display: block;
-        font-size: 12px;
-        font-weight: 700;
-        color: #4b5563;
-        margin-bottom: 2px;
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
+      .speaker-name{
+        font-size: 18px;
       }
     }
   </style>
@@ -76,141 +98,133 @@
       <section class="card">
         <h2>Speakers</h2>
 
-        <table class="table" aria-label="Confirmed speakers table">
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Institution</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-label="Name">
-                <a href="https://bansal.engin.umich.edu/" target="_blank" rel="noopener">Nikhil Bansal</a>
-              </td>
-              <td data-label="Institution">University of Michigan</td>
-            </tr>
+        <div class="speaker-grid" aria-label="Confirmed speakers">
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://bansal.engin.umich.edu/" target="_blank" rel="noopener">Nikhil Bansal</a>
+            </h3>
+            <p class="speaker-inst">University of Michigan</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://sites.google.com/view/amey-bhangale/home" target="_blank" rel="noopener">Amey Bhangale</a>
-              </td>
-              <td data-label="Institution">UC Riverside</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://sites.google.com/view/amey-bhangale/home" target="_blank" rel="noopener">Amey Bhangale</a>
+            </h3>
+            <p class="speaker-inst">UC Riverside</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://rgreenfeld.math.northwestern.edu/" target="_blank" rel="noopener">Rachel Greenfeld</a>
-              </td>
-              <td data-label="Institution">Northwestern University</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://rgreenfeld.math.northwestern.edu/" target="_blank" rel="noopener">Rachel Greenfeld</a>
+            </h3>
+            <p class="speaker-inst">Northwestern University</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://people.eecs.berkeley.edu/~venkatg/" target="_blank" rel="noopener">Venkatesan Guruswami</a>
-              </td>
-              <td data-label="Institution">UC Berkeley</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://people.eecs.berkeley.edu/~venkatg/" target="_blank" rel="noopener">Venkatesan Guruswami</a>
+            </h3>
+            <p class="speaker-inst">UC Berkeley</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://cseweb.ucsd.edu/~nmhopkin/" target="_blank" rel="noopener">Max Hopkins</a>
-              </td>
-              <td data-label="Institution">Institute for Advanced Study</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://cseweb.ucsd.edu/~nmhopkin/" target="_blank" rel="noopener">Max Hopkins</a>
+            </h3>
+            <p class="speaker-inst">Institute for Advanced Study</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://jthsieh.github.io/" target="_blank" rel="noopener">Tim Hsieh</a>
-              </td>
-              <td data-label="Institution">MIT</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://jthsieh.github.io/" target="_blank" rel="noopener">Tim Hsieh</a>
+            </h3>
+            <p class="speaker-inst">MIT</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://people.epfl.ch/oliver.janzer" target="_blank" rel="noopener">Oliver Janzer</a>
-              </td>
-              <td data-label="Institution">EPFL</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://people.epfl.ch/oliver.janzer" target="_blank" rel="noopener">Oliver Janzer</a>
+            </h3>
+            <p class="speaker-inst">EPFL</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://zanderkelley.com/" target="_blank" rel="noopener">Zander Kelley</a>
-              </td>
-              <td data-label="Institution">Institute for Advanced Study</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://zanderkelley.com/" target="_blank" rel="noopener">Zander Kelley</a>
+            </h3>
+            <p class="speaker-inst">Institute for Advanced Study</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://www.cs.princeton.edu/~kothari/" target="_blank" rel="noopener">Pravesh Kothari</a>
-              </td>
-              <td data-label="Institution">Princeton University</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://www.cs.princeton.edu/~kothari/" target="_blank" rel="noopener">Pravesh Kothari</a>
+            </h3>
+            <p class="speaker-inst">Princeton University</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://mathematics.huji.ac.il/people/noam-lifshitz" target="_blank" rel="noopener">Noam Lifshitz</a>
-              </td>
-              <td data-label="Institution">Hebrew University of Jerusalem</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://mathematics.huji.ac.il/people/noam-lifshitz" target="_blank" rel="noopener">Noam Lifshitz</a>
+            </h3>
+            <p class="speaker-inst">Hebrew University of Jerusalem</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://yangpliu.github.io/" target="_blank" rel="noopener">Yang Liu</a>
-              </td>
-              <td data-label="Institution">CMU</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://yangpliu.github.io/" target="_blank" rel="noopener">Yang Liu</a>
+            </h3>
+            <p class="speaker-inst">CMU</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://rhmontgomery.warwick.ac.uk/" target="_blank" rel="noopener">Richard Montgomery</a>
-              </td>
-              <td data-label="Institution">University of Warwick</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://rhmontgomery.warwick.ac.uk/" target="_blank" rel="noopener">Richard Montgomery</a>
+            </h3>
+            <p class="speaker-inst">University of Warwick</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://www.math.uwaterloo.ca/~lpostle/" target="_blank" rel="noopener">Luke Postle</a>
-              </td>
-              <td data-label="Institution">University of Waterloo</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://www.math.uwaterloo.ca/~lpostle/" target="_blank" rel="noopener">Luke Postle</a>
+            </h3>
+            <p class="speaker-inst">University of Waterloo</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://www.dpmms.cam.ac.uk/~jdrs2/" target="_blank" rel="noopener">Julian Sahasrabudhe</a>
-              </td>
-              <td data-label="Institution">University of Cambridge</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://www.dpmms.cam.ac.uk/~jdrs2/" target="_blank" rel="noopener">Julian Sahasrabudhe</a>
+            </h3>
+            <p class="speaker-inst">University of Cambridge</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://sites.google.com/view/istvantomon/home" target="_blank" rel="noopener">Istvan Tomon</a>
-              </td>
-              <td data-label="Institution">Umeå University</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://sites.google.com/view/istvantomon/home" target="_blank" rel="noopener">Istvan Tomon</a>
+            </h3>
+            <p class="speaker-inst">Umeå University</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://shlw.github.io/" target="_blank" rel="noopener">Kewen Wu</a>
-              </td>
-              <td data-label="Institution">Caltech</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://shlw.github.io/" target="_blank" rel="noopener">Kewen Wu</a>
+            </h3>
+            <p class="speaker-inst">Caltech</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://sites.google.com/view/dmitriizakharov/home" target="_blank" rel="noopener">Dimitrii Zakharov</a>
-              </td>
-              <td data-label="Institution">MIT</td>
-            </tr>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://sites.google.com/view/dmitriizakharov/home" target="_blank" rel="noopener">Dimitrii Zakharov</a>
+            </h3>
+            <p class="speaker-inst">MIT</p>
+          </article>
 
-            <tr>
-              <td data-label="Name">
-                <a href="https://sites.google.com/view/ruixiang-zhang/home" target="_blank" rel="noopener">Ruixiang Zhang</a>
-              </td>
-              <td data-label="Institution">UC Berkeley</td>
-            </tr>
-          </tbody>
-        </table>
+          <article class="speaker-card">
+            <h3 class="speaker-name">
+              <a href="https://sites.google.com/view/ruixiang-zhang/home" target="_blank" rel="noopener">Ruixiang Zhang</a>
+            </h3>
+            <p class="speaker-inst">UC Berkeley</p>
+          </article>
+        </div>
 
       </section>
     </div>
