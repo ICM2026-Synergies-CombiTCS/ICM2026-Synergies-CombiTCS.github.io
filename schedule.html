@@ -1,3 +1,9 @@
+Below is a cleaner schedule-page layout using day-by-day columns with each time slot as a clearly separated block. Speaker names are styled in red, with a visible line break before each talk title. I also moved the Problem Session to Tuesday at 4:00pm, and made Wednesday afternoon a single Free block, as requested. The schedule content comes from the uploaded program PDF, with the requested corrections applied 
+.
+Replace schedule.html with:
+html
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,6 +16,7 @@
   />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header class="header">
     <div class="container topbar">
@@ -35,6 +42,7 @@
       <p class="subtitle">
         Synergies in Combinatorics and Theoretical Computer Science
       </p>
+
       <div class="badges" role="list" aria-label="Conference quick facts">
         <span class="badge" role="listitem"><strong>August 3–7, 2026</strong></span>
         <span class="badge" role="listitem"><strong>Merkin Center, Caltech</strong></span>
@@ -45,12 +53,13 @@
 
   <main class="main">
     <div class="container">
+
       <section class="card">
         <div class="section-heading">
           <div>
-            <h2>Conference Timetable</h2>
+            <h2>Conference Schedule</h2>
             <p class="muted">
-              Talks are listed by speaker. Full titles and abstracts are available in the program booklet below.
+              Each talk slot is shown separately. Full abstracts are available in the program PDF below.
             </p>
           </div>
 
@@ -59,187 +68,227 @@
           </a>
         </div>
 
-        <div class="schedule-table-wrap" role="region" aria-label="Conference schedule table" tabindex="0">
-          <table class="schedule-table">
-            <thead>
-              <tr>
-                <th scope="col">Time</th>
-                <th scope="col">Monday<br /><span>Aug. 3</span></th>
-                <th scope="col">Tuesday<br /><span>Aug. 4</span></th>
-                <th scope="col">Wednesday<br /><span>Aug. 5</span></th>
-                <th scope="col">Thursday<br /><span>Aug. 6</span></th>
-                <th scope="col">Friday<br /><span>Aug. 7</span></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">9:00am</th>
-                <td>
-                  <div class="talk">
-                    <strong>Wojciech Samotij</strong>
-                    <span>Sparse sets in hypergraphs</span>
-                  </div>
-                </td>
-                <td>
-                  <div class="talk">
-                    <strong>Max Hopkins</strong>
-                    <span>On Codes, Hard Functions, and High Dimensional Expanders</span>
-                  </div>
-                </td>
-                <td>
-                  <div class="talk">
-                    <strong>Venkatesan Guruswami</strong>
-                    <span>The Richness of CSP Non-Redundancy</span>
-                  </div>
-                </td>
-                <td>
-                  <div class="talk">
-                    <strong>Ruixiang Zhang</strong>
-                    <span>Arithmetic Kakeya and mixed-norm multilinear inequalities</span>
-                  </div>
-                </td>
-                <td>
-                  <div class="talk">
-                    <strong>Amey Bhangale</strong>
-                    <span>CSPs and Inverse Theorems for k-wise Correlations of Functions</span>
-                  </div>
-                </td>
-              </tr>
+        <div class="schedule-days" aria-label="Conference schedule">
 
-              <tr class="event-row">
-                <th scope="row">10:00am</th>
-                <td>Coffee</td>
-                <td>Coffee</td>
-                <td>Coffee</td>
-                <td>Coffee</td>
-                <td>Coffee</td>
-              </tr>
+          <!-- Monday -->
+          <section class="day-card" aria-labelledby="monday-heading">
+            <h3 id="monday-heading">Monday <span>Aug. 3</span></h3>
 
-              <tr>
-                <th scope="row">10:30am</th>
-                <td>
-                  <div class="talk">
-                    <strong>Nikhil Bansal</strong>
-                    <span>On Beck–Fiala and Komlós Conjectures</span>
-                  </div>
-                </td>
-                <td>
-                  <div class="talk">
-                    <strong>Tim Hsieh</strong>
-                    <span>Explicit Lossless Vertex Expanders</span>
-                  </div>
-                </td>
-                <td>
-                  <div class="talk">
-                    <strong>Zander Kelley</strong>
-                    <span>A More Efficient Sifting Lemma and a Stronger 3-Player Communication Lower Bound</span>
-                  </div>
-                </td>
-                <td>
-                  <div class="talk">
-                    <strong>Dimitrii Zakharov</strong>
-                    <span>Sticky Kakeya estimate in four dimensions</span>
-                  </div>
-                </td>
-                <td>
-                  <div class="talk">
-                    <strong>Yang Liu</strong>
-                    <span>Proof of the 3-CSP Inverse Theorem and Applications to Combinatorial Lines</span>
-                  </div>
-                </td>
-              </tr>
+            <div class="slot talk-slot">
+              <div class="slot-time">9:00am</div>
+              <div class="speaker">Wojciech Samotij</div>
+              <div class="talk-title">Sparse sets in hypergraphs</div>
+            </div>
 
-              <tr class="event-row">
-                <th scope="row">11:30am</th>
-                <td>Lunch</td>
-                <td>Lunch</td>
-                <td>Lunch</td>
-                <td>Lunch</td>
-                <td>Lunch</td>
-              </tr>
+            <div class="slot event-slot">
+              <div class="slot-time">10:00am</div>
+              <div class="event-name">Coffee</div>
+            </div>
 
-              <tr>
-                <th scope="row">1:30pm</th>
-                <td>
-                  <div class="talk">
-                    <strong>István Tomon</strong>
-                    <span>The Combinatorics of Factorization Norms</span>
-                  </div>
-                </td>
-                <td>
-                  <div class="talk">
-                    <strong>Rachel Greenfeld</strong>
-                    <span>Between translational tilings and configurations of low pattern complexity</span>
-                  </div>
-                </td>
-                <td class="free">Free</td>
-                <td>
-                  <div class="talk">
-                    <strong>Richard Montgomery</strong>
-                    <span>Minimising the reciprocal sum of cycle lengths</span>
-                  </div>
-                </td>
-                <td>
-                  <div class="talk">
-                    <strong>Boris Bukh</strong>
-                    <span>Faster random walk via infrequent steering</span>
-                  </div>
-                </td>
-              </tr>
+            <div class="slot talk-slot">
+              <div class="slot-time">10:30am</div>
+              <div class="speaker">Nikhil Bansal</div>
+              <div class="talk-title">On Beck–Fiala and Komlós Conjectures</div>
+            </div>
 
-              <tr class="event-row">
-                <th scope="row">2:30pm</th>
-                <td>Coffee</td>
-                <td>Coffee</td>
-                <td class="free">Free</td>
-                <td>Coffee</td>
-                <td>Coffee</td>
-              </tr>
+            <div class="slot event-slot">
+              <div class="slot-time">11:30am</div>
+              <div class="event-name">Lunch</div>
+            </div>
 
-              <tr>
-                <th scope="row">3:00pm</th>
-                <td>
-                  <div class="talk">
-                    <strong>Kewen Wu</strong>
-                    <span>Locally sampleable distributions: Hamming slices, symmetry, and quantum advantage</span>
-                  </div>
-                </td>
-                <td>
-                  <div class="talk">
-                    <strong>James Leng</strong>
-                    <span>Quasipolynomial Bounds for the U<sup>s+1</sup>[N] Inverse Theorem</span>
-                  </div>
-                </td>
-                <td class="free">Free</td>
-                <td>
-                  <div class="talk">
-                    <strong>Oliver Janzer</strong>
-                    <span>Hamiltonicity of regular sublinear expanders</span>
-                  </div>
-                </td>
-                <td>
-                  <div class="talk">
-                    <strong>Jacques Verstraëte</strong>
-                    <span>Recent Progress on the Erdős–Rogers Function</span>
-                  </div>
-                </td>
-              </tr>
+            <div class="slot talk-slot">
+              <div class="slot-time">1:30pm</div>
+              <div class="speaker">István Tomon</div>
+              <div class="talk-title">The Combinatorics of Factorization Norms</div>
+            </div>
 
-              <tr>
-                <th scope="row">4:00pm</th>
-                <td class="event">Problem Session</td>
-                <td class="free">Free</td>
-                <td class="free">Free</td>
-                <td>
-                  <div class="talk">
-                    <strong>Luke Postle</strong>
-                    <span>A Proof of Nash-Williams’ Conjecture</span>
-                  </div>
-                </td>
-                <td class="free">—</td>
-              </tr>
-            </tbody>
-          </table>
+            <div class="slot event-slot">
+              <div class="slot-time">2:30pm</div>
+              <div class="event-name">Coffee</div>
+            </div>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">3:00pm</div>
+              <div class="speaker">Kewen Wu</div>
+              <div class="talk-title">Locally sampleable distributions: Hamming slices, symmetry, and quantum advantage</div>
+            </div>
+          </section>
+
+          <!-- Tuesday -->
+          <section class="day-card" aria-labelledby="tuesday-heading">
+            <h3 id="tuesday-heading">Tuesday <span>Aug. 4</span></h3>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">9:00am</div>
+              <div class="speaker">Max Hopkins</div>
+              <div class="talk-title">On Codes, Hard Functions, and High Dimensional Expanders</div>
+            </div>
+
+            <div class="slot event-slot">
+              <div class="slot-time">10:00am</div>
+              <div class="event-name">Coffee</div>
+            </div>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">10:30am</div>
+              <div class="speaker">Tim Hsieh</div>
+              <div class="talk-title">Explicit Lossless Vertex Expanders</div>
+            </div>
+
+            <div class="slot event-slot">
+              <div class="slot-time">11:30am</div>
+              <div class="event-name">Lunch</div>
+            </div>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">1:30pm</div>
+              <div class="speaker">Rachel Greenfeld</div>
+              <div class="talk-title">Between translational tilings and configurations of low pattern complexity</div>
+            </div>
+
+            <div class="slot event-slot">
+              <div class="slot-time">2:30pm</div>
+              <div class="event-name">Coffee</div>
+            </div>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">3:00pm</div>
+              <div class="speaker">James Leng</div>
+              <div class="talk-title">Quasipolynomial Bounds for the U<sup>s+1</sup>[N] Inverse Theorem</div>
+            </div>
+
+            <div class="slot special-slot">
+              <div class="slot-time">4:00pm</div>
+              <div class="event-name">Problem Session</div>
+            </div>
+          </section>
+
+          <!-- Wednesday -->
+          <section class="day-card" aria-labelledby="wednesday-heading">
+            <h3 id="wednesday-heading">Wednesday <span>Aug. 5</span></h3>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">9:00am</div>
+              <div class="speaker">Venkatesan Guruswami</div>
+              <div class="talk-title">The Richness of CSP Non-Redundancy</div>
+            </div>
+
+            <div class="slot event-slot">
+              <div class="slot-time">10:00am</div>
+              <div class="event-name">Coffee</div>
+            </div>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">10:30am</div>
+              <div class="speaker">Zander Kelley</div>
+              <div class="talk-title">A More Efficient Sifting Lemma and a Stronger 3-Player Communication Lower Bound</div>
+            </div>
+
+            <div class="slot event-slot">
+              <div class="slot-time">11:30am</div>
+              <div class="event-name">Lunch</div>
+            </div>
+
+            <div class="slot free-slot afternoon-free">
+              <div class="slot-time">Afternoon</div>
+              <div class="event-name">Free</div>
+            </div>
+          </section>
+
+          <!-- Thursday -->
+          <section class="day-card" aria-labelledby="thursday-heading">
+            <h3 id="thursday-heading">Thursday <span>Aug. 6</span></h3>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">9:00am</div>
+              <div class="speaker">Ruixiang Zhang</div>
+              <div class="talk-title">Arithmetic Kakeya and mixed-norm multilinear inequalities</div>
+            </div>
+
+            <div class="slot event-slot">
+              <div class="slot-time">10:00am</div>
+              <div class="event-name">Coffee</div>
+            </div>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">10:30am</div>
+              <div class="speaker">Dimitrii Zakharov</div>
+              <div class="talk-title">Sticky Kakeya estimate in four dimensions</div>
+            </div>
+
+            <div class="slot event-slot">
+              <div class="slot-time">11:30am</div>
+              <div class="event-name">Lunch</div>
+            </div>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">1:30pm</div>
+              <div class="speaker">Richard Montgomery</div>
+              <div class="talk-title">Minimising the reciprocal sum of cycle lengths</div>
+            </div>
+
+            <div class="slot event-slot">
+              <div class="slot-time">2:30pm</div>
+              <div class="event-name">Coffee</div>
+            </div>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">3:00pm</div>
+              <div class="speaker">Oliver Janzer</div>
+              <div class="talk-title">Hamiltonicity of regular sublinear expanders</div>
+            </div>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">4:00pm</div>
+              <div class="speaker">Luke Postle</div>
+              <div class="talk-title">A Proof of Nash-Williams’ Conjecture</div>
+            </div>
+          </section>
+
+          <!-- Friday -->
+          <section class="day-card" aria-labelledby="friday-heading">
+            <h3 id="friday-heading">Friday <span>Aug. 7</span></h3>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">9:00am</div>
+              <div class="speaker">Amey Bhangale</div>
+              <div class="talk-title">CSPs and Inverse Theorems for k-wise Correlations of Functions</div>
+            </div>
+
+            <div class="slot event-slot">
+              <div class="slot-time">10:00am</div>
+              <div class="event-name">Coffee</div>
+            </div>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">10:30am</div>
+              <div class="speaker">Yang Liu</div>
+              <div class="talk-title">Proof of the 3-CSP Inverse Theorem and Applications to Combinatorial Lines</div>
+            </div>
+
+            <div class="slot event-slot">
+              <div class="slot-time">11:30am</div>
+              <div class="event-name">Lunch</div>
+            </div>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">1:30pm</div>
+              <div class="speaker">Boris Bukh</div>
+              <div class="talk-title">Faster random walk via infrequent steering</div>
+            </div>
+
+            <div class="slot event-slot">
+              <div class="slot-time">2:30pm</div>
+              <div class="event-name">Coffee</div>
+            </div>
+
+            <div class="slot talk-slot">
+              <div class="slot-time">3:00pm</div>
+              <div class="speaker">Jacques Verstraëte</div>
+              <div class="talk-title">Recent Progress on the Erdős–Rogers Function</div>
+            </div>
+          </section>
+
         </div>
 
         <p class="muted schedule-note">
@@ -252,7 +301,7 @@
           <div>
             <h2>Titles and Abstracts</h2>
             <p class="muted">
-              The full program booklet includes the complete talk titles and abstracts.
+              The full program booklet includes complete talk titles and abstracts.
             </p>
           </div>
 
@@ -261,7 +310,7 @@
           </a>
         </div>
 
-        <div class="pdf-viewer" id="program-pdf">
+        <div class="pdf-viewer">
           <object
             data="assets/icm-satellite-2026-program.pdf"
             type="application/pdf"
@@ -280,6 +329,7 @@
           If the embedded PDF does not appear, use the “Open PDF” or “Download Program PDF” link above.
         </p>
       </section>
+
     </div>
   </main>
 
