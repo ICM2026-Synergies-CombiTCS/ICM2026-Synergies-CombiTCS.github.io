@@ -1,9 +1,3 @@
-Below is a cleaner schedule-page layout using day-by-day columns with each time slot as a clearly separated block. Speaker names are styled in red, with a visible line break before each talk title. I also moved the Problem Session to Tuesday at 4:00pm, and made Wednesday afternoon a single Free block, as requested. The schedule content comes from the uploaded program PDF, with the requested corrections applied 
-.
-Replace schedule.html with:
-html
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -54,12 +48,12 @@ html
   <main class="main">
     <div class="container">
 
-      <section class="card">
+      <section class="card schedule-card">
         <div class="section-heading">
           <div>
             <h2>Conference Schedule</h2>
             <p class="muted">
-              Each talk slot is shown separately. Full abstracts are available in the program PDF below.
+              Full titles and abstracts are available in the program PDF below.
             </p>
           </div>
 
@@ -68,227 +62,107 @@ html
           </a>
         </div>
 
-        <div class="schedule-days" aria-label="Conference schedule">
+        <div class="schedule-table-wrap" role="region" aria-label="Conference schedule table" tabindex="0">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th scope="col" class="time-head">Time</th>
+                <th scope="col">
+                  Monday
+                  <span>Aug. 3</span>
+                </th>
+                <th scope="col">
+                  Tuesday
+                  <span>Aug. 4</span>
+                </th>
+                <th scope="col">
+                  Wednesday
+                  <span>Aug. 5</span>
+                </th>
+                <th scope="col">
+                  Thursday
+                  <span>Aug. 6</span>
+                </th>
+                <th scope="col">
+                  Friday
+                  <span>Aug. 7</span>
+                </th>
+              </tr>
+            </thead>
 
-          <!-- Monday -->
-          <section class="day-card" aria-labelledby="monday-heading">
-            <h3 id="monday-heading">Monday <span>Aug. 3</span></h3>
+            <tbody>
+              <tr>
+                <th scope="row" class="time-cell">9:00am</th>
+                <td class="talk-cell"><span class="speaker-name">Wojciech Samotij</span></td>
+                <td class="talk-cell"><span class="speaker-name">Max Hopkins</span></td>
+                <td class="talk-cell"><span class="speaker-name">Venkatesan Guruswami</span></td>
+                <td class="talk-cell"><span class="speaker-name">Ruixiang Zhang</span></td>
+                <td class="talk-cell"><span class="speaker-name">Amey Bhangale</span></td>
+              </tr>
 
-            <div class="slot talk-slot">
-              <div class="slot-time">9:00am</div>
-              <div class="speaker">Wojciech Samotij</div>
-              <div class="talk-title">Sparse sets in hypergraphs</div>
-            </div>
+              <tr>
+                <th scope="row" class="time-cell">10:00am</th>
+                <td class="break-cell">Coffee</td>
+                <td class="break-cell">Coffee</td>
+                <td class="break-cell">Coffee</td>
+                <td class="break-cell">Coffee</td>
+                <td class="break-cell">Coffee</td>
+              </tr>
 
-            <div class="slot event-slot">
-              <div class="slot-time">10:00am</div>
-              <div class="event-name">Coffee</div>
-            </div>
+              <tr>
+                <th scope="row" class="time-cell">10:30am</th>
+                <td class="talk-cell"><span class="speaker-name">Nikhil Bansal</span></td>
+                <td class="talk-cell"><span class="speaker-name">Tim Hsieh</span></td>
+                <td class="talk-cell"><span class="speaker-name">Zander Kelley</span></td>
+                <td class="talk-cell"><span class="speaker-name">Dimitrii Zakharov</span></td>
+                <td class="talk-cell"><span class="speaker-name">Yang Liu</span></td>
+              </tr>
 
-            <div class="slot talk-slot">
-              <div class="slot-time">10:30am</div>
-              <div class="speaker">Nikhil Bansal</div>
-              <div class="talk-title">On Beck–Fiala and Komlós Conjectures</div>
-            </div>
+              <tr>
+                <th scope="row" class="time-cell">11:30am</th>
+                <td class="meal-cell">Lunch</td>
+                <td class="meal-cell">Lunch</td>
+                <td class="meal-cell">Lunch</td>
+                <td class="meal-cell">Lunch</td>
+                <td class="meal-cell">Lunch</td>
+              </tr>
 
-            <div class="slot event-slot">
-              <div class="slot-time">11:30am</div>
-              <div class="event-name">Lunch</div>
-            </div>
+              <tr>
+                <th scope="row" class="time-cell">1:30pm</th>
+                <td class="talk-cell"><span class="speaker-name">István Tomon</span></td>
+                <td class="talk-cell"><span class="speaker-name">Rachel Greenfeld</span></td>
+                <td class="free-cell afternoon-free" rowspan="4">
+                  <span>Free</span>
+                </td>
+                <td class="talk-cell"><span class="speaker-name">Richard Montgomery</span></td>
+                <td class="talk-cell"><span class="speaker-name">Boris Bukh</span></td>
+              </tr>
 
-            <div class="slot talk-slot">
-              <div class="slot-time">1:30pm</div>
-              <div class="speaker">István Tomon</div>
-              <div class="talk-title">The Combinatorics of Factorization Norms</div>
-            </div>
+              <tr>
+                <th scope="row" class="time-cell">2:30pm</th>
+                <td class="break-cell">Coffee</td>
+                <td class="break-cell">Coffee</td>
+                <td class="break-cell">Coffee</td>
+                <td class="break-cell">Coffee</td>
+              </tr>
 
-            <div class="slot event-slot">
-              <div class="slot-time">2:30pm</div>
-              <div class="event-name">Coffee</div>
-            </div>
+              <tr>
+                <th scope="row" class="time-cell">3:00pm</th>
+                <td class="talk-cell"><span class="speaker-name">Kewen Wu</span></td>
+                <td class="talk-cell"><span class="speaker-name">James Leng</span></td>
+                <td class="talk-cell"><span class="speaker-name">Oliver Janzer</span></td>
+                <td class="talk-cell"><span class="speaker-name">Jacques Verstraëte</span></td>
+              </tr>
 
-            <div class="slot talk-slot">
-              <div class="slot-time">3:00pm</div>
-              <div class="speaker">Kewen Wu</div>
-              <div class="talk-title">Locally sampleable distributions: Hamming slices, symmetry, and quantum advantage</div>
-            </div>
-          </section>
-
-          <!-- Tuesday -->
-          <section class="day-card" aria-labelledby="tuesday-heading">
-            <h3 id="tuesday-heading">Tuesday <span>Aug. 4</span></h3>
-
-            <div class="slot talk-slot">
-              <div class="slot-time">9:00am</div>
-              <div class="speaker">Max Hopkins</div>
-              <div class="talk-title">On Codes, Hard Functions, and High Dimensional Expanders</div>
-            </div>
-
-            <div class="slot event-slot">
-              <div class="slot-time">10:00am</div>
-              <div class="event-name">Coffee</div>
-            </div>
-
-            <div class="slot talk-slot">
-              <div class="slot-time">10:30am</div>
-              <div class="speaker">Tim Hsieh</div>
-              <div class="talk-title">Explicit Lossless Vertex Expanders</div>
-            </div>
-
-            <div class="slot event-slot">
-              <div class="slot-time">11:30am</div>
-              <div class="event-name">Lunch</div>
-            </div>
-
-            <div class="slot talk-slot">
-              <div class="slot-time">1:30pm</div>
-              <div class="speaker">Rachel Greenfeld</div>
-              <div class="talk-title">Between translational tilings and configurations of low pattern complexity</div>
-            </div>
-
-            <div class="slot event-slot">
-              <div class="slot-time">2:30pm</div>
-              <div class="event-name">Coffee</div>
-            </div>
-
-            <div class="slot talk-slot">
-              <div class="slot-time">3:00pm</div>
-              <div class="speaker">James Leng</div>
-              <div class="talk-title">Quasipolynomial Bounds for the U<sup>s+1</sup>[N] Inverse Theorem</div>
-            </div>
-
-            <div class="slot special-slot">
-              <div class="slot-time">4:00pm</div>
-              <div class="event-name">Problem Session</div>
-            </div>
-          </section>
-
-          <!-- Wednesday -->
-          <section class="day-card" aria-labelledby="wednesday-heading">
-            <h3 id="wednesday-heading">Wednesday <span>Aug. 5</span></h3>
-
-            <div class="slot talk-slot">
-              <div class="slot-time">9:00am</div>
-              <div class="speaker">Venkatesan Guruswami</div>
-              <div class="talk-title">The Richness of CSP Non-Redundancy</div>
-            </div>
-
-            <div class="slot event-slot">
-              <div class="slot-time">10:00am</div>
-              <div class="event-name">Coffee</div>
-            </div>
-
-            <div class="slot talk-slot">
-              <div class="slot-time">10:30am</div>
-              <div class="speaker">Zander Kelley</div>
-              <div class="talk-title">A More Efficient Sifting Lemma and a Stronger 3-Player Communication Lower Bound</div>
-            </div>
-
-            <div class="slot event-slot">
-              <div class="slot-time">11:30am</div>
-              <div class="event-name">Lunch</div>
-            </div>
-
-            <div class="slot free-slot afternoon-free">
-              <div class="slot-time">Afternoon</div>
-              <div class="event-name">Free</div>
-            </div>
-          </section>
-
-          <!-- Thursday -->
-          <section class="day-card" aria-labelledby="thursday-heading">
-            <h3 id="thursday-heading">Thursday <span>Aug. 6</span></h3>
-
-            <div class="slot talk-slot">
-              <div class="slot-time">9:00am</div>
-              <div class="speaker">Ruixiang Zhang</div>
-              <div class="talk-title">Arithmetic Kakeya and mixed-norm multilinear inequalities</div>
-            </div>
-
-            <div class="slot event-slot">
-              <div class="slot-time">10:00am</div>
-              <div class="event-name">Coffee</div>
-            </div>
-
-            <div class="slot talk-slot">
-              <div class="slot-time">10:30am</div>
-              <div class="speaker">Dimitrii Zakharov</div>
-              <div class="talk-title">Sticky Kakeya estimate in four dimensions</div>
-            </div>
-
-            <div class="slot event-slot">
-              <div class="slot-time">11:30am</div>
-              <div class="event-name">Lunch</div>
-            </div>
-
-            <div class="slot talk-slot">
-              <div class="slot-time">1:30pm</div>
-              <div class="speaker">Richard Montgomery</div>
-              <div class="talk-title">Minimising the reciprocal sum of cycle lengths</div>
-            </div>
-
-            <div class="slot event-slot">
-              <div class="slot-time">2:30pm</div>
-              <div class="event-name">Coffee</div>
-            </div>
-
-            <div class="slot talk-slot">
-              <div class="slot-time">3:00pm</div>
-              <div class="speaker">Oliver Janzer</div>
-              <div class="talk-title">Hamiltonicity of regular sublinear expanders</div>
-            </div>
-
-            <div class="slot talk-slot">
-              <div class="slot-time">4:00pm</div>
-              <div class="speaker">Luke Postle</div>
-              <div class="talk-title">A Proof of Nash-Williams’ Conjecture</div>
-            </div>
-          </section>
-
-          <!-- Friday -->
-          <section class="day-card" aria-labelledby="friday-heading">
-            <h3 id="friday-heading">Friday <span>Aug. 7</span></h3>
-
-            <div class="slot talk-slot">
-              <div class="slot-time">9:00am</div>
-              <div class="speaker">Amey Bhangale</div>
-              <div class="talk-title">CSPs and Inverse Theorems for k-wise Correlations of Functions</div>
-            </div>
-
-            <div class="slot event-slot">
-              <div class="slot-time">10:00am</div>
-              <div class="event-name">Coffee</div>
-            </div>
-
-            <div class="slot talk-slot">
-              <div class="slot-time">10:30am</div>
-              <div class="speaker">Yang Liu</div>
-              <div class="talk-title">Proof of the 3-CSP Inverse Theorem and Applications to Combinatorial Lines</div>
-            </div>
-
-            <div class="slot event-slot">
-              <div class="slot-time">11:30am</div>
-              <div class="event-name">Lunch</div>
-            </div>
-
-            <div class="slot talk-slot">
-              <div class="slot-time">1:30pm</div>
-              <div class="speaker">Boris Bukh</div>
-              <div class="talk-title">Faster random walk via infrequent steering</div>
-            </div>
-
-            <div class="slot event-slot">
-              <div class="slot-time">2:30pm</div>
-              <div class="event-name">Coffee</div>
-            </div>
-
-            <div class="slot talk-slot">
-              <div class="slot-time">3:00pm</div>
-              <div class="speaker">Jacques Verstraëte</div>
-              <div class="talk-title">Recent Progress on the Erdős–Rogers Function</div>
-            </div>
-          </section>
-
+              <tr>
+                <th scope="row" class="time-cell">4:00pm</th>
+                <td class="empty-cell">—</td>
+                <td class="special-cell">Problem Session</td>
+                <td class="talk-cell"><span class="speaker-name">Luke Postle</span></td>
+                <td class="empty-cell">—</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <p class="muted schedule-note">
@@ -301,7 +175,7 @@ html
           <div>
             <h2>Titles and Abstracts</h2>
             <p class="muted">
-              The full program booklet includes complete talk titles and abstracts.
+              The full program booklet contains the talk titles and abstracts.
             </p>
           </div>
 
