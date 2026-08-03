@@ -527,3 +527,51 @@ a:hover, a:focus-visible{
     min-height: 420px;
   }
 }
+
+/* Logistics page */
+
+.logistics-hero .subtitle {
+  max-width: 760px;
+}
+
+.logistics-card {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.logistics-info {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.info-block {
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 16px;
+  padding: 1.1rem 1.2rem;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+}
+
+.info-label {
+  margin-bottom: 0.5rem;
+  color: #6b7280;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.info-value {
+  color: #111827;
+  font-size: 1.05rem;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+@media (max-width: 720px) {
+  .logistics-info {
+    grid-template-columns: 1fr;
+  }
+}
